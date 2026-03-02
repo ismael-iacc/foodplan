@@ -84,13 +84,9 @@ stages:
               PathtoPublish: '$(Build.ArtifactStagingDirectory)/scan-report.sarif'
               ArtifactName: 'SecurityScanReport'
               publishLocation: 'Container'
-            condition: always()
 
-          # ── Publish to CodeAnalysisLogs (SARIF Scans Tab extension) ──
-          - task: PublishBuildArtifacts@1
-            displayName: 'Publish SARIF to CodeAnalysisLogs'
+          # ── Publish report ──
+          - task: AdvancedSecurity-Publish@1
+            displayName: 'Publish SARIF'
             inputs:
-              PathtoPublish: '$(Build.ArtifactStagingDirectory)/scan-report.sarif'
-              ArtifactName: 'CodeAnalysisLogs'
-              publishLocation: 'Container'
-            condition: always()
+              SarifsInputDirectory: '$(Build.ArtifactStagingDirectory)'
