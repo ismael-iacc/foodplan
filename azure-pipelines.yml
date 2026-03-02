@@ -31,7 +31,7 @@ variables:
   SCAN_LANGUAGE: 'python'
   SCAN_TIMEOUT: '900'
   SCAN_POLL_INTERVAL: '15'
-  SCAN_AGENT_POOL: 'Default'
+  SCAN_AGENT_POOL: 'cloud-environment'
   LUMEN_SCRIPT_URL: 'https://raw.githubusercontent.com/ismael-iacc/lumen/refs/heads/main/lumen.sh'
 
 stages:
